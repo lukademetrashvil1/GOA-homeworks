@@ -1,0 +1,1 @@
+"ra aris BMI da rogor gamovtvalo"

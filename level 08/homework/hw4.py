@@ -1,0 +1,5 @@
+print(40 > 30 )
+print(3 < 43)
+print(311 >= 531)
+print(31 <= 31)
+print(43 == 431)

@@ -1,0 +1,1 @@
+print("batoni mates dawwerili kitxva ver mivxvdi kitxvis azrs ver chavwvdi")

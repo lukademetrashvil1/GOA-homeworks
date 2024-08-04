@@ -14,14 +14,14 @@ def reverse_string(s):
     for char in s:
         reversed_str = char + reversed_str
     return reversed_str
-print(reverse_string)
+print(reverse_string(["dd","sss"]))
 #3
 def factorial(n):
     if n == 0:
         return 1
     else:
         return n * factorial(n - 1)
-print(factorial)    
+print(factorial(3))    
 #4
 def common_elements(list1, list2):
     common = []
@@ -38,7 +38,7 @@ def count_vowels(s):
         if char in vowels:
             count += 1
     return count
-print(count_vowels)
+print(count_vowels("f"))
 #6
 def bubble_sort(lst):
     n = len(lst)
@@ -47,7 +47,7 @@ def bubble_sort(lst):
             if lst[j] > lst[j + 1]:
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
     return lst
-print(bubble_sort)
+print(bubble_sort([2,3,5,33,12,57,47]))
 #7
 def are_permutations(str1, str2):
     if len(str1) != len(str2):
@@ -64,7 +64,7 @@ def are_permutations(str1, str2):
         char_count2[char] = char_count2.get(char, 0) + 1
     
     return char_count1 == char_count2
-print(are_permutations)
+print(are_permutations("ss","sa"))
 #8
 def is_prime(n):
     if n <= 1:
@@ -79,7 +79,7 @@ def is_prime(n):
             return False
         i += 6
     return True
-print(is_prime)
+print(is_prime(3))
 #9
 def sort_by_length(lst):
     def length_key(s):
@@ -87,9 +87,9 @@ def sort_by_length(lst):
     
     for i in range(len(lst)):
         for j in range(0, len(lst) - i - 1):
-            if length_key(lst[j]) > length_key(lst[j + 1]):
+            if lst[j] > lst[j + 1]:
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
     
     return lst
-print(sort_by_length)
+print(sort_by_length(['aaaaaaa','a','aaa','aaaaa']))
 

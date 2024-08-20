@@ -1,0 +1,16 @@
+div {
+    width: 200px;
+    height: 200px;
+
+    background-color: red;
+
+    padding: 20px;
+
+    /* border: 20px solid black; */
+
+    border-width: 20px;
+    border-style: solid solid solid dotted;
+    border-color: black;
+
+    margin: 10px;
+}

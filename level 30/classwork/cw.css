@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+p{
+    font-family: 'dancing script';
+}
+a:hover{
+    color:red;
+    text-decoration-line:line-through
+}
+a:active{
+    color :green
+}
+a:link{
+    color:aquamarine
+}
+a:visited{
+    color:blueviolet
+}

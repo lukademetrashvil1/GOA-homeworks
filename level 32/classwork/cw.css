@@ -1,0 +1,29 @@
+.box {
+    box-sizing: border-box; /*სტნდარტული ყუთის მოდელი სიგანეში იმატებს და box-sizing-ით კი აკლდება */
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 15px;
+    background-color: lightblue;
+}
+.box1 {
+    width: 200px; 
+    height: 100px; 
+    padding: 20px; 
+    border: 5px solid black; 
+    margin: 15px; 
+}
+.box2 {
+    
+    width: 150px;
+    height: 80px; 
+    padding: 10px; 
+    border: 3px solid red; 
+    margin: 10px; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}

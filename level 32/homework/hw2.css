@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+}
+form{
+    padding: 50px;
+}
+div{   
+    border-radius: 20px;
+    width: 1000px;
+    height:300px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+
+    text-align: center;
+    color:white;
+    margin: 5px;
+}
+.parent{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: flex-start;
+    padding: 10px; 
+ 
+ 
+}
+.child_korea{
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.JGXJK5BWHes1EBpUnZoL1wHaE7%26pid%3DApi&sp=1725361880Tcb10d95ec85b11df8362262f948b58e92093a4b7fe0fa0949a6bd9cbf17d0e2f);
+}
+.child_tbilisi{
+    
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.3d2rmGvZuuLxbF9qHkWc_QHaE7%26pid%3DApi&sp=1725354936T3c7c2a66e04120a7492105cfb8674a465ba7ab90eba1eaf3ebe941f92f953dec);
+}
+.child_newyork{
+
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.bVSfvwvQxYPL8CKADU0_bwHaFj%26pid%3DApi&sp=1725355073T92db0565aa88f98572529619ec30819957b56bd6d0032c1035a2059bc2a8ac77);
+
+}
+.child_paris{
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.TAHzIGIA1ZEEOtQbK5MLcQHaGl%26pid%3DApi&sp=1725356548Ta75b040442af1c8fed77d72777806f8ff8cc26c412b950762038928e3c871382)
+
+}
+.child_tokyo{
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.G49pD60gLG5F5cmGnt5q-QHaE8%26pid%3DApi&sp=1725356566T6316f76b21111df61e7a89383fc84db00f0db3dfc7cd93e1e0e3bf81cb68b299)
+}
+.child_dubai{
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.hugAi63nd_1xMAhmT_YWvgHaE8%26pid%3DApi&sp=1725356626Tc132ce1ef3cc238f4ac3052e20bef9775e0081e754f31c5b82cfc7e42af3f68d)
+}

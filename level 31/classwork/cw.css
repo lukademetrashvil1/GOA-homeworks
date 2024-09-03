@@ -1,0 +1,10 @@
+ul{
+    list-style: circle inside none;
+    text-align: center;
+    color:aqua
+}
+ol{
+    list-style: upper-alpha inside none;
+    text-align:  center;
+    color:ccsa
+}

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.parent {
+    position: relative;
+
+}
+
+
+img {
+    width: 70px;
+}
+
+.red-circle {
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 45px;
+    left: 50px;
+}
+/* მშობელ ელემენტზე სტატიკის გარდა ნებისმიერის გაწერის შსემთხვევაში ვამოძრავებთ წიტელ წერტილს მშობელ ელემენტზე და ტუ აარ გავუწერთ იმავე ადგილიდა სჰევუცვლით პოზიციას */

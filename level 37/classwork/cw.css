@@ -1,0 +1,18 @@
+/* transform კუთვნილებას ვიყენებთ ელემენტის ვიზუალიზაციისთვის */
+.moving-div {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+  }
+  
+  
+  .moving-div:hover {
+    transform: translate(50px, -50px) scale(2);
+    transform: rotate(45deg);
+  }
+  
+  
+  .moving-div:active {
+    transform: translate(-50px, 50px) scale(0.5);
+    transform: rotate(-45eg);
+  }

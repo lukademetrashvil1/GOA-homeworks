@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ცენტრირება */
+    margin: 0;
+}
+
+.animated-box {
+    width: 300px; /* სიგანე */
+    height: 500px; /* სიმაღლე */
+    background-color: green; /* თავდაპირველი უკანა ფერი */
+    transition: background-color 0.5s ease, transform 0.5s ease; /* ანიმაციის პარამეტრები */
+}
+
+/* როდესაც დივ ბლოკზე მიშვებთ */
+.animated-box:hover {
+    background-color: blue; /* ფერის შეცვლა ლურჯზე */
+    transform: scale(1.1); /* ზომის ზრდა */
+}

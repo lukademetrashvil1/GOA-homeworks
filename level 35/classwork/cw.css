@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+}
+form{
+    padding: 50px;
+}
+.parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:10px ;
+    width: 1000px;
+    height: 600px;
+
+}
+div{
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+.child_korea{
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.ySzxs9tNou322vlsblip9AHaE8%26pid%3DApi&sp=1725723549T2c76f280280f84ec7260f08dccdbae9908c1e38fb90d677a00f3dcbdbed5d63e);
+}
+.child_tbilisi{
+    
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.3d2rmGvZuuLxbF9qHkWc_QHaE7%26pid%3DApi&sp=1725723669T4a085ce584cde7c0bd3b1c2f98410080e32f25f3088d07b97fa937cb3c655100);
+}
+.child_newyork{
+
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.lC9NBU-HRAmY0sxQqv_Q4AHaE8%26pid%3DApi&sp=1725723723T6de51c00e5a57bb081bedde4fdab5c05474cc9bb2e2ca8ae8a267441f7bda43e);
+
+}
+.child_paris{
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.TAHzIGIA1ZEEOtQbK5MLcQHaGl%26pid%3DApi&sp=1725723766T38253ff3a88d9ce5eea984d2ab9ca2ff06d85c6b2ffe68908e1d41db32007972)
+
+}
+.child_tokyo{
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.RxiQdfH0cLkCXJATogln7wHaE8%26pid%3DApi&sp=1725723801Ta073f64eb9d0603489e375b057844df14b2c07a48d2ef3ba3e1e87198616175d)
+}
+.child_dubai{
+    background-image: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.lrL6TsRfcOIihBCfKJSTWgHaI9%26pid%3DApi&sp=1725723841T2af1c3cda99883785c51268081515e62626a5dd93569756e137c803b40e0e9a1)
+}

@@ -1,0 +1,7 @@
+.combined-transform-div {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    transform: rotate(45deg) translate(-100px, 0) scale(1.5);
+    transition: transform 0.3s ease;
+}

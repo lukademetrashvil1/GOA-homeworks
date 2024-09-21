@@ -1,0 +1,6 @@
+.scale-div {
+    width: 100px;
+    height: 100px;
+    background-color: #2ecc71;
+    transform: scale(1.5);
+}

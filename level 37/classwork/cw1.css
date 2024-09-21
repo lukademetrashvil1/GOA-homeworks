@@ -1,0 +1,6 @@
+.rotate-div {
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    transform: rotate(45deg);
+}

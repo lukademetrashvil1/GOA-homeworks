@@ -1,0 +1,38 @@
+:root {
+    --my-color: green;
+        /* :root არის CSS-ის სპეციალური სექცია, 
+           რომელიც ნიშნავს მთელს დოკუმენტს. 
+           აქ შეგიძლიათ განსაზღვროთ ცვლადები, 
+           რომლებსაც შეიძლება მივმართოთ სხვა სტილის წესებში. */
+        /* ეს არის CSS-ის ცვლადი, 
+        რომელიც იტევს მწვანე ფერს. 
+        მისი გამოყენება საშუალებას გვაძლევს 
+        ერთიანი დიზაინის შენარჩუნება. */
+}
+    
+
+
+.styled-element {
+    background-color: var(--my-color);
+    color: white;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+.transform-example {
+    width: 200px;
+    height: 200px;
+    background-color:var(--my-color);
+    margin: 50px auto;
+    transition: transform 0.3s; /* სტანდარტული ტრანსფორმი */
+}
+
+/* სხვადასხვა prefix-ების გამოყენებით */
+.transform-example {
+    -webkit-transform: rotate(20deg); /* Safari */
+    -moz-transform: rotate(20deg);    /* Firefox */
+    -ms-transform: rotate(20deg);     /* Internet Explorer */
+    transform: rotate(20deg);         /* სტანდარტული */
+}

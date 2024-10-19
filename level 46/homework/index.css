@@ -1,6 +1,7 @@
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
@@ -12,50 +13,55 @@ body {
     position: relative;
 }
 
-.logo {
+.navbar h1 {
     color: white;
-    font-size: 24px;
+    margin: 0;
 }
 
-.nav-links {
-    list-style: none;
+.menu {
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+}
+
+.menu.active {
     display: flex;
-    transition: max-height 0.3s ease-in-out;
+    max-height: 200px; /* Max height for the menu */
 }
 
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
+.menu a {
     color: white;
     text-decoration: none;
+    padding: 15px;
+    transition: background-color 0.3s;
 }
 
-.toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
+.menu a:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
     color: white;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .nav-links {
+@media (min-width: 600px) {
+    .menu {
+        display: flex !important;
+        position: static;
+        max-height: none;
+    }
+    .toggle-button {
         display: none;
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-        background-color: #333;
-        width: 100%;
-    }
-    
-    .nav-links.active {
-        display: flex;
-        max-height: 300px; /* Arbitrary value, adjust as needed */
-    }
-
-    .toggle {
-        display: block;
     }
 }

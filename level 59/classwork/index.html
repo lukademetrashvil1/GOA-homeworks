@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+</head>
+<body>
+    <h2>გამოიყენე ფორმა</h2>
+
+    <form id="userForm">
+        <label for="firstName">სახელი:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="lastName">გვარი:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="checkbox">დამეთანხმებით?</label>
+        <input type="checkbox" id="checkbox" name="checkbox"><br><br>
+
+        <button type="button" onclick="submitForm()">გაგზავნა</button>
+    </form>
+
+    <!-- JavaScript ფაილი დაინკლუზდება აქ -->
+    <script src="script.js"></script>
+</body>
+</html>

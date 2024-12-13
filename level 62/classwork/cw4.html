@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        #counter {
+            font-size: 30px;
+            color: black;
+            transition: color 0.3s;
+        }
+        .negative {
+            color: red;
+        }
+        .positive {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0</div>
+    <button onclick="increment()">მიმატება</button>
+    <button onclick="decrement()">გამოკლება</button>
+    <button onclick="resetCounter()">რესტარტი</button>
+
+    <script>
+        let count = 0;
+        const counterElement = document.getElementById('counter');
+
+        function updateCounter() {
+            counterElement.textContent = count;
+            if (count < 0) {
+                counterElement.classList.add('negative');
+                counterElement.classList.remove('positive');
+            } else if (count > 0) {
+                counterElement.classList.add('positive');
+                counterElement.classList.remove('negative');
+            } else {
+                counterElement.classList.remove('negative', 'positive');
+            }
+        }
+
+        function increment() {
+            count++;
+            updateCounter();
+        }
+
+        function decrement() {
+            count--;
+            updateCounter();
+        }
+
+        function resetCounter() {
+            count = 0;
+            updateCounter();
+        }
+    </script>
+</body>
+</html>

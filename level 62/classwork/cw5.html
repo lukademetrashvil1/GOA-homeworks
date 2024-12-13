@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Toggle</title>
+    <style>
+        #message {
+            font-size: 30px;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">გამარჯობა</div>
+    <button onclick="toggleMessage()">დაკლიკე</button>
+
+    <script>
+        let isGreeting = true;
+        const messageElement = document.getElementById('message');
+
+        function toggleMessage() {
+            if (isGreeting) {
+                messageElement.style.opacity = 0;
+                setTimeout(() => {
+                    messageElement.textContent = 'ნახვამდის';
+                    messageElement.style.opacity = 1;
+                }, 500); // ნახევარი წამით გვქონდეს გაფართოებული
+            } else {
+                messageElement.style.opacity = 0;
+                setTimeout(() => {
+                    messageElement.textContent = 'გამარჯობა';
+                    messageElement.style.opacity = 1;
+                }, 500);
+            }
+            isGreeting = !isGreeting;
+        }
+    </script>
+</body>
+</html>

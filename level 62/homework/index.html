@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მომხმარებლის ტექსტი</title>
+</head>
+<body>
+    <button onclick="checkText()">შეამოწმეთ ტექსტი</button>
+    <div id="result"></div>
+
+    <script>
+        function checkText() {
+            // მივიღებთ მომხმარებლის მიერ შეყვანილ ტექსტს
+            let inputText = prompt("შეიყვანეთ ტექსტი:");
+
+            // რეგულარული გამოხატულება, რომელიც ეძებს რიცხვებს ან სპეციალურ სიმბოლოებს
+            let regex = /[0-9!@#$%^&*(),.?":{}|<>]/g;
+
+            // თუ regex-ის მეშვეობით იპოვით რიცხვებს ან ნიშანს
+            if (regex.test(inputText)) {
+                let errorMessage = "ერორი: ტექსტში შეიცავს რიცხვებს ან ნიშანებს.";
+                let indices = [];
+
+                // ვამოწმებთ ინდექსებს, სადაც რიცხვები ან ნიშნები არიან
+                for (let i = 0; i < inputText.length; i++) {
+                    if (regex.test(inputText[i])) {
+                        indices.push(i);
+                    }
+                }
+
+                document.getElementById("result").innerHTML = `${errorMessage} ინდექსები: ${indices.join(", ")}`;
+            } else {
+                document.getElementById("result").innerHTML = "წარმატებული ოპერაცია";
+            }
+        }
+    </script>
+</body>
+</html>

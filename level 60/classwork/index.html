@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მომხმარებლის არჩევანი</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        #content {
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>აირჩიეთ თქვენი პარამეტრები</h1>
+        
+        <form id="preferences-form">
+            <label>
+                <input type="checkbox" id="black-screen" /> შავი ეკრანი
+            </label>
+            <br><br>
+            <label>
+                <input type="checkbox" id="large-text" /> დიდი ტექსტი
+            </label>
+            <br><br>
+            <label>
+                <input type="checkbox" id="long-text" /> გრძელი ტექსტი
+            </label>
+            <br><br>
+            <button type="button" onclick="generateSite()">გახადეთ ცვლილებები</button>
+        </form>
+        
+        <div id="content">
+            <h2>თქვენი საიტი</h2>
+            <p>ეს არის განახლებული ვერსია თქვენი არჩევანის მიხედვით.</p>
+        </div>
+    </div>
+
+    <script>
+        function generateSite() {
+            const blackScreen = document.getElementById('black-screen').checked;
+            const largeText = document.getElementById('large-text').checked;
+            const longText = document.getElementById('long-text').checked;
+            const content = document.getElementById('content');
+            
+            // Reset content styles
+            content.style.backgroundColor = '';
+            content.style.color = '';
+            content.style.fontSize = '';
+            content.innerHTML = '<h2>თქვენი საიტი</h2><p>ეს არის განახლებული ვერსია თქვენი არჩევანის მიხედვით.</p>';
+
+            // Apply changes based on choices
+            if (blackScreen) {
+                content.style.backgroundColor = 'black';
+                content.style.color = 'white';
+            }
+            if (largeText) {
+                content.style.fontSize = '20px';
+            }
+            if (longText) {
+                content.innerHTML += '<p>ეს არის დამატებითი ტექსტი, რომელიც იწყება ახლა და გრძელდება დიდხანს. გთხოვთ, დარწმუნდეთ, რომ ყველაფერი გაქვთ წაკითხული, რადგან ტექსტი მართლაც გრძელდება და შეიძლება რამდენიმე დრო დასჭირდეს იმის წაკითხვას. ამ გვერდის მიზანია თქვენთვის განახლებული გამოცდილების შეთავაზება.</p>';
+            }
+        }
+    </script>
+</body>
+</html>

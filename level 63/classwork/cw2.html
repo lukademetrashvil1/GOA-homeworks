@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ქუქი ქლიქერი</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+    .cookie-clicker-container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    #score {
+      font-size: 40px;
+      font-weight: bold;
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f39c12;
+      color: white;
+    }
+    img {
+      width: 100px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="cookie-clicker-container">
+  <h2>ქუქი ქლიქერი</h2>
+  <p>ქულა: <span id="score">0</span></p>
+  <img id="cookie" src="https://www.freepnglogos.com/uploads/cookie-png/cookie-png-images-transparent-png-6.png" alt="Cookie">
+</div>
+
+<script>
+  let score = 0;
+  const scoreDisplay = document.getElementById("score");
+  const cookieImage = document.getElementById("cookie");
+
+  cookieImage.addEventListener("click", () => {
+    score++;
+    
+    if (score % 100 === 0) {
+      score *= 2;  // Every 100 clicks, double the score
+    }
+
+    scoreDisplay.textContent = score;
+  });
+</script>
+
+</body>
+</html>

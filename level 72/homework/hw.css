@@ -1,0 +1,153 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #f5f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    background-color: #ffffff;
+    max-width: 800px;
+    width: 100%;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .container h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+  
+  .guarantee {
+    color: #2ecc71;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .description {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .pricing {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .subscription, .features {
+    width: 48%;
+    padding: 25px;
+    border-radius: 8px;
+  }
+  
+  .subscription {
+    background-color: #2ab2af;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .subscription h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .subscription h3 span {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  
+  .subscription p {
+    margin-bottom: 20px;
+  }
+  
+  .subscription button {
+    background-color: #c0df34;
+    color: #2ab2af;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscription button:hover {
+    background-color: #a8c42d;
+  }
+  
+  .features {
+    background-color: #3c9e9b;
+    color: white;
+    text-align: left;
+  }
+  
+  .features h4 {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .features ul {
+    list-style: none;
+  }
+  
+  .features ul li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  /* ----------- RESPONSIVE DESIGN ----------- */
+  
+  /* Tablets and smaller screens */
+  @media (max-width: 768px) {
+    .pricing {
+      flex-direction: column;
+    }
+  
+    .subscription, .features {
+      width: 100%;
+    }
+  
+    .subscription button {
+      width: 100%;
+    }
+  }
+  
+  /* Mobile devices */
+  @media (max-width: 480px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .subscription h3 {
+      font-size: 28px;
+    }
+  
+    .subscription button {
+      padding: 10px;
+    }
+  
+    .features h4 {
+      font-size: 18px;
+    }
+  }
+  

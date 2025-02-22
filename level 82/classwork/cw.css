@@ -1,0 +1,83 @@
+/* ზოგადი სტილები */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf8f1; /* ფონური ფერი */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    background-color: #f9e9d6;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.63);
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* მაქსიმალური სიგანე */
+}
+
+/* ჰედერის სტილი */
+h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* რედიო ღილაკები */
+input[type="radio"] {
+    margin: 0 20px;
+}
+
+label {
+    font-size: 2em;
+    margin-right: 20px;
+    color: #333;
+}
+
+/* ღილაკები */
+button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+    box-shadow: none;
+}
+
+button:not(:disabled):hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+button:not(:disabled):active {
+    background-color: #388e3c;
+    transform: translateY(0);
+}
+
+/* შედეგის სტილიზაცია */
+#output {
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #333;
+    border: 3px solid #4CAF50;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    display: inline-block;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.514);
+}

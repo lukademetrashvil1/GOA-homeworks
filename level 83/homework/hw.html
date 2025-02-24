@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ზუსტი დრო</title>
+    <style>
+        /* ზოგადი სტილები */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #6a11cb, #2575fc); /* გრადიენტი ფონი */
+            font-family: 'Arial', sans-serif;
+        }
+        
+        /* დროის ბლოკის სტილები */
+        .time {
+            font-size: 80px;
+            font-weight: 600;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.4); /* ფონი ნახევრად გამჭვირვალე */
+            padding: 20px 40px;
+            border-radius: 15px; /* მრგვალი კუთხეები */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* გრძელი ჩრდილები */
+        }
+
+        /* დროის ციფრების სტილები */
+        .time span {
+            font-size: 100px;
+            font-weight: bold;
+        }
+
+        /* ტექსტის ანიმაცია */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+      
+    </style>
+</head>
+<body>
+    <div class="time" id="timeDisplay">
+        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+    
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        setInterval(updateTime, 1000);
+        updateTime();  // პირველადი დროც უნდა განახლდეს ვებ-გვერდის დატვირთვისთანავე
+    </script>
+</body>
+</html>

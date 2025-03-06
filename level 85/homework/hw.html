@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Manipulation</title>
+</head>
+<body>
+    <!-- getElementById Example -->
+    <h1 id="heading">Hello, World!</h1>
+    <button onclick="changeText()">Change Heading Text</button>
+
+    <!-- getElementsByClassName Example -->
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <button onclick="changeBoxText()">Change Box Text</button>
+
+    <!-- getElementsByTagName Example -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button onclick="changeListItems()">Change List Items</button>
+
+    <!-- Using innerHTML -->
+    <div id="content">This is a content placeholder.</div>
+    <button onclick="changeContent()">Change Content</button>
+
+    <!-- Using .style -->
+    <div id="styleExample" style="width:100px;height:100px;background-color:blue;margin-top:20px;"></div>
+    <button onclick="changeStyle()">Change Style</button>
+
+    <script>
+        // getElementById Example
+        function changeText() {
+            var element = document.getElementById("heading");
+            element.innerHTML = "New Heading Text!";
+        }
+
+        // getElementsByClassName Example
+        function changeBoxText() {
+            var boxes = document.getElementsByClassName("box");
+            for (var i = 0; i < boxes.length; i++) {
+                boxes[i].innerHTML = "New Box Text " + (i + 1);
+            }
+        }
+
+        // getElementsByTagName Example
+        function changeListItems() {
+            var items = document.getElementsByTagName("li");
+            for (var i = 0; i < items.length; i++) {
+                items[i].innerHTML = "Updated Item " + (i + 1);
+            }
+        }
+
+        // innerHTML Example
+        function changeContent() {
+            var content = document.getElementById("content");
+            content.innerHTML = "Content has been changed!";
+        }
+
+        // .style Example
+        function changeStyle() {
+            var element = document.getElementById("styleExample");
+            element.style.backgroundColor = "red";
+            element.style.width = "200px";
+            element.style.height = "200px";
+        }
+    </script>
+</body>
+</html>

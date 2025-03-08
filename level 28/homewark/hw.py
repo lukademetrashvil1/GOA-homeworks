@@ -1,0 +1,1 @@
+# fotoebi maq chagdebuli

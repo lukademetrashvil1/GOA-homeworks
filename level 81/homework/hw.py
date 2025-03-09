@@ -1,1 +1,1 @@
-ar iyo davaleba
+# davaleba ar iyo

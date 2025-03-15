@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>კატა და ძაღლი</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 500px;
+            height: auto;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>გააგზავნეთ ფოტო კატა ან ძაღლი</h1>
+
+    <button id="catButton">კატა</button>
+    <button id="dogButton">ძაღლი</button>
+
+    <div>
+        <img id="image" src="" alt="ფოტო" style="display:none;">
+    </div>
+
+    <script>
+        // ელემენტებს მივართმევთ შესაბამის ღილაკებს
+        const catButton = document.getElementById("catButton");
+        const dogButton = document.getElementById("dogButton");
+        const image = document.getElementById("image");
+
+        // კატას ფოტო
+        const catImage = "https://placekitten.net/500/300"; // ამ შემთხვევაში გამოიყენება შემთხვევითი კატა სურათი
+        // ძაღლის ფოტო
+        const dogImage = "https://placedog.net/500/300"; // ამ შემთხვევაში გამოიყენება შემთხვევითი ძაღლი სურათი
+
+        // კატას ღილაკზე დაკლიკების დროს
+        catButton.onclick = function() {
+            image.src = catImage;
+            image.style.display = "block"; // სურათი გამოაჩინოს
+        };
+
+        // ძაღლის ღილაკზე დაკლიკების დროს
+        dogButton.onclick = function() {
+            image.src = dogImage;
+            image.style.display = "block"; // სურათი გამოაჩინოს
+        };
+    </script>
+
+</body>
+</html>

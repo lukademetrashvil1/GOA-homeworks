@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Child Styling Tasks</title>
+  <style>
+    .box, .multi-div {
+      margin: 15px 0;
+      padding: 10px;
+      border: 1px solid gray;
+    }
+
+    .box div, .multi-div {
+      padding: 10px;
+      margin: 5px;
+      border: 1px dashed #999;
+    }
+  </style>
+</head>
+<body>
+
+<!-- პირველი დავალება: მომხმარებლის არჩევით გასტილება -->
+<h3>1. Highlight chosen child</h3>
+<div class="box" id="parentBox">
+  <div>Child 1</div>
+  <div>Child 2</div>
+  <div>Child 3</div>
+  <div>Child 4</div>
+</div>
+<input type="number" id="childIndex" placeholder="Enter child number" />
+<button onclick="highlightChild()">Highlight</button>
+
+<!-- მეორე დავალება: შეამოწმე div-ს ჰყავს თუ არა შვილი -->
+<h3>2. Check for child</h3>
+<div class="multi-div" id="div1"><p>Text inside div1</p></div>
+<div class="multi-div" id="div2"></div>
+<div class="multi-div" id="div3"><span>Another child</span></div>
+<input type="number" id="divSelect" placeholder="Enter div number (1-3)" />
+<button onclick="checkForChild()">Check Div</button>
+
+<!-- მესამე დავალება: ყველა child სხვადასხვა ფერით -->
+<h3>3. Color each child differently</h3>
+<div class="box" id="colorfulParent">
+  <div>Box 1</div>
+  <div>Box 2</div>
+  <div>Box 3</div>
+  <div>Box 4</div>
+</div>
+<button onclick="colorEachChild()">Color Each</button>
+
+<!-- მეოთხე დავალება: პირველი p წითელი -->
+<h3>4. Make first paragraph red</h3>
+<div class="box" id="textDiv">
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  <p>Third paragraph</p>
+</div>
+<button onclick="makeFirstRed()">Make First Red</button>
+
+<script>
+  // 1. გაშავებს მომხმარებლის მიერ მითითებულ შვილს
+  function highlightChild() {
+    const index = parseInt(document.getElementById("childIndex").value) - 1;
+    const parent = document.getElementById("parentBox");
+    const children = parent.children;
+
+    // ყველა წაიშალოს სტილი
+    for (let child of children) {
+      child.style.background = "";
+    }
+
+    // თუ ინდექსი სწორია, მიანიჭე ფერი
+    if (index >= 0 && index < children.length) {
+      children[index].style.background = "lightblue";
+    } else {
+      alert("Invalid child number");
+    }
+  }
+
+  // 2. ამოწმებს არჩეულ div-ს ჰყავს თუ არა შვილი
+  function checkForChild() {
+    const divNum = parseInt(document.getElementById("divSelect").value);
+    const div = document.getElementById(`div${divNum}`);
+
+    if (!div) return alert("Invalid div number");
+
+    if (div.children.length > 0 || div.textContent.trim().length > 0) {
+      alert("✅ This Div has child");
+    } else {
+      alert("❌ No child inside this div");
+    }
+  }
+
+  // 3. ყველა შვილს აძლევს განსხვავებულ ფერს
+  function colorEachChild() {
+    const parent = document.getElementById("colorfulParent");
+    const colors = ["lightcoral", "lightgreen", "lightseagreen", "lightsalmon", "lightpink"];
+    for (let i = 0; i < parent.children.length; i++) {
+      parent.children[i].style.background = colors[i % colors.length];
+    }
+  }
+
+  // 4. პირველი <p> ელემენტი გახდება წითელი
+  function makeFirstRed() {
+    const parent = document.getElementById("textDiv");
+    const paragraphs = parent.getElementsByTagName("p");
+    if (paragraphs.length > 0) {
+      paragraphs[0].style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>

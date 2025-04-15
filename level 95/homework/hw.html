@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ინტერაქტიული ანიმაციები</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #eef2f3;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background-color: white;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* ელემენტის დამატების სტილი */
+    .new-div {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #dfe6e9;
+      border: 1px solid #b2bec3;
+      border-radius: 6px;
+    }
+
+    /* კვადრატული ანიმაციის სტილი */
+    #square {
+      width: 100px;
+      height: 100px;
+      background: crimson;
+      transition: border-radius 1s;
+    }
+
+    /* მბრუნავი ბოქსის სტილი */
+    #mover {
+      width: 50px;
+      height: 50px;
+      background: seagreen;
+      position: relative;
+    }
+
+    /* ტექსტური ეფექტის სტილი */
+    #output {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    input[type="text"], input[type="number"] {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. ღილაკზე დაჭერით ელემენტის დამატება -->
+  <section>
+    <h2>დამატება</h2>
+    <button id="addDivBtn">დაამატე ელემენტი</button>
+    <div id="container"></div>
+  </section>
+
+  <!-- 2. კვადრატის წრედ გადაქცევის ანიმაცია -->
+  <section>
+    <h2>კვადრატი -> წრე -> კვადრატი</h2>
+    <div id="square"></div>
+  </section>
+
+  <!-- 3. მოძრაობის ანიმაცია -->
+  <section>
+    <h2>მოძრავი ბოქსი</h2>
+    <input type="number" id="durationInput" placeholder="დრო მილიწამებში">
+    <button onclick="moveBox()">დაწყება</button>
+    <div id="mover"></div>
+  </section>
+
+  <!-- 4. ტექსტის ტიპინგი ეფექტით გამოჩენა -->
+  <section>
+    <h2>Typewriter ტექსტი</h2>
+    <input type="text" id="userInput" placeholder="შეიყვანე ტექსტი">
+    <button onclick="typeText()">წერა</button>
+    <p id="output"></p>
+  </section>
+
+  <script>
+    // 1. ღილაკზე დაჭერით ელემენტის დამატება
+    document.getElementById('addDivBtn').addEventListener('click', () => {
+      const newDiv = document.createElement('div');
+      newDiv.textContent = "ახალი ელემენტი დაემატა!";
+      newDiv.className = "new-div";
+      document.getElementById("container").appendChild(newDiv);
+    });
+
+    // 2. კვადრატი -> წრე -> კვადრატი
+    const square = document.getElementById('square');
+    square.addEventListener('click', () => {
+      square.style.borderRadius = '50%';
+      setTimeout(() => {
+        square.style.borderRadius = '0%';
+      }, 1000);
+    });
+
+    // 3. მოძრაობა ყველა მიმართულებით
+    function moveBox() {
+      const box = document.getElementById('mover');
+      const duration = parseInt(document.getElementById('durationInput').value) || 4000;
+
+      box.animate([
+        { transform: 'translate(0, 0)' },
+        { transform: 'translate(200px, 0)' },
+        { transform: 'translate(200px, 200px)' },
+        { transform: 'translate(0, 200px)' },
+        { transform: 'translate(0, 0)' }
+      ], {
+        duration: duration,
+        iterations: 1
+      });
+    }
+
+    // 4. Typewriter ეფექტი
+    function typeText() {
+      const text = document.getElementById("userInput").value;
+      const output = document.getElementById("output");
+      output.textContent = "";
+      let i = 0;
+
+      const interval = setInterval(() => {
+        output.textContent += text[i];
+        i++;
+        if (i >= text.length) clearInterval(interval);
+      }, 100);
+    }
+  </script>
+</body>
+</html>

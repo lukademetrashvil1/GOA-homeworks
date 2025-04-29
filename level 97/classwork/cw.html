@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Input ცვლილების მეთვალყურე</title>
+</head>
+<body>
+  <input type="text" id="myInput" placeholder="შეიყვანე ტექსტი...">
+
+  <script>
+    const input = document.getElementById('myInput');
+    let previousLength = 0;
+
+    input.addEventListener('input', () => {
+      const currentLength = input.value.length;
+
+      if (currentLength > previousLength) {
+        console.log(`დამატებულია ${currentLength - previousLength} ასო`);
+      } else if (currentLength < previousLength) {
+        console.log(`წაშლილია ${previousLength - currentLength} ასო`);
+      }
+
+      previousLength = currentLength;
+    });
+  </script>
+</body>
+</html>

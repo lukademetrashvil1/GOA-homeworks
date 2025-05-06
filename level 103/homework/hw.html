@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slider - დანაშთვის ლოგიკა</title>
+  <style>
+    img { width: 300px; height: auto; }
+  </style>
+</head>
+<body>
+  <h2>Image Slider (დანაშთვის ლოგიკა)</h2>
+  <img id="sliderImage" src="img1.jpg" alt="Slide Image">
+  <br>
+  <button onclick="prev()">⏮ Prev</button>
+  <button onclick="next()">Next ⏭</button>
+
+  <script>
+    const images = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"];
+    let index = 0;
+
+    function next() {
+      index++;
+      if (index >= images.length) index = 0; // უკან დაბრუნება
+      document.getElementById("sliderImage").src = images[index];
+    }
+
+    function prev() {
+      index--;
+      if (index < 0) index = images.length - 1; // ბოლოს დაბრუნება
+      document.getElementById("sliderImage").src = images[index];
+    }
+  </script>
+</body>
+</html>

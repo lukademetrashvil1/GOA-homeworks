@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Programming Languages Slider</title>
+  <style>
+    img { width: 300px; height: auto; }
+    #caption { font-size: 20px; margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Programming Languages Slider</h2>
+  <img id="langImage" src="js.png" alt="Language Logo">
+  <div id="caption">JavaScript</div>
+  <br>
+  <button onclick="prevLang()">⏮ Prev</button>
+  <button onclick="nextLang()">Next ⏭</button>
+
+  <script>
+    const languages = [
+      { src: "js.png", name: "JavaScript" },
+      { src: "python.png", name: "Python" },
+      { src: "java.png", name: "Java" },
+      { src: "csharp.png", name: "C#" },
+      { src: "go.png", name: "Go" }
+    ];
+
+    let current = 0;
+
+    function updateSlider() {
+      document.getElementById("langImage").src = languages[current].src;
+      document.getElementById("caption").textContent = languages[current].name;
+    }
+
+    function nextLang() {
+      current++;
+      if (current >= languages.length) current = 0;
+      updateSlider();
+    }
+
+    function prevLang() {
+      current--;
+      if (current < 0) current = languages.length - 1;
+      updateSlider();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Propagation & Variables</title>
+  <style>
+    #outer, #middle, #inner {
+      padding: 20px;
+      margin: 10px;
+      border: 2px solid black;
+    }
+    #outer { background-color: #f8d7da; }
+    #middle { background-color: #d1ecf1; }
+    #inner { background-color: #d4edda; }
+  </style>
+</head>
+<body>
+
+  <h2>Event Propagation (Capturing & Bubbling)</h2>
+  <div id="outer">
+    Outer
+    <div id="middle">
+      Middle
+      <button id="inner">Click Me (Propagation)</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>var / let / const მაგალითები</h2>
+  <button onclick="testVarLetConst()">Test var/let/const</button>
+  <pre id="varOutput"></pre>
+
+  <hr>
+
+  <h2>Event Examples</h2>
+
+  <!-- Click -->
+  <button id="clickBtn">Click Me</button>
+
+  <!-- Input -->
+  <input type="text" id="inputField" placeholder="Type something..." />
+
+  <!-- Submit -->
+  <form id="myForm">
+    <input type="text" name="username" placeholder="Username" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // === Event Propagation ===
+
+    // Capturing Phase
+    document.getElementById("outer").addEventListener("click", () => {
+      console.log("Outer - Capturing");
+    }, true);
+
+    document.getElementById("middle").addEventListener("click", () => {
+      console.log("Middle - Capturing");
+    }, true);
+
+    document.getElementById("inner").addEventListener("click", () => {
+      console.log("Button - Capturing");
+    }, true);
+
+    // Bubbling Phase
+    document.getElementById("outer").addEventListener("click", () => {
+      console.log("Outer - Bubbling");
+    });
+
+    document.getElementById("middle").addEventListener("click", () => {
+      console.log("Middle - Bubbling");
+    });
+
+    document.getElementById("inner").addEventListener("click", () => {
+      console.log("Button - Bubbling");
+    });
+
+    // === var / let / const ===
+    function testVarLetConst() {
+      let output = '';
+
+      // var
+      var a = 1;
+      if (true) {
+        var a = 2; // overrides
+      }
+      output += `var a = ${a}\n`; // 2
+
+      // let
+      let b = 3;
+      if (true) {
+        let b = 4; // block scoped
+      }
+      output += `let b = ${b}\n`; // 3
+
+      // const
+      const c = [5, 6];
+      c.push(7); // OK
+      output += `const c = [${c.join(", ")}]\n`; // [5, 6, 7]
+
+      document.getElementById("varOutput").textContent = output;
+    }
+
+    // === Event Examples ===
+
+    // click
+    document.getElementById("clickBtn").addEventListener("click", () => {
+      alert("Click event triggered!");
+    });
+
+    // input
+    document.getElementById("inputField").addEventListener("input", (e) => {
+      console.log("Input value:", e.target.value);
+    });
+
+    // submit
+    document.getElementById("myForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Form submitted!");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: #E3CC9E;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .stem {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 100px;
+      background: #D95F5B;
+    }
+
+    .cap-left, .cap-right {
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      background: #D95F5B;
+      border-radius: 50%;
+    }
+
+    .cap-left {
+      left: 0;
+    }
+
+    .cap-right {
+      right: 0;
+    }
+
+    .cutout {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 50px;
+      background: #E3CC9E;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cap-left"></div>
+    <div class="cap-right"></div>
+    <div class="stem"></div>
+    <div class="cutout"></div>
+  </div>
+</body>
+</html>
